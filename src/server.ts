@@ -2,6 +2,7 @@ import express from "express";
 
 const app = express();
 
+// get
 app.get("/", (request, response) => {
   return response.json({ message: "Hello World!" });
 });
