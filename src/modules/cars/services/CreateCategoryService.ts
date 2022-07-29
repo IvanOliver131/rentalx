@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { ICategoriesRepository } from "../repositories/ICategoriesRepository";
+import { ICategoriesRepository } from "../interfaces/ICategoriesRepository";
 
 interface IRequest {
   name: string;
