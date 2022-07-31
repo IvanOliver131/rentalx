@@ -6,6 +6,7 @@ interface ICreateCategoryDTO {
   description: string;
 }
 
+// Interace de categories
 interface ICategoriesRepository {
   findByName(name: string): Category;
   list(): Category[];
