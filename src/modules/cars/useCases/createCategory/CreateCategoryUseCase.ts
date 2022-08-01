@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { ICategoriesRepository } from "../interfaces/ICategoriesRepository";
+import { ICategoriesRepository } from "../../interfaces/ICategoriesRepository";
 
 interface IRequest {
   name: string;
@@ -12,7 +12,7 @@ interface IRequest {
  * [x] - Acessar o repositório
  * [x] - Retornar algo
  */
-class CreateCategoryService {
+class CreateCategoryUseCase {
   // Devemos criar o private para termos acesso dentro do execute
   constructor(private categoriesRepository: ICategoriesRepository) { }
 
@@ -27,4 +27,4 @@ class CreateCategoryService {
   }
 }
 
-export { CreateCategoryService };
+export { CreateCategoryUseCase };
