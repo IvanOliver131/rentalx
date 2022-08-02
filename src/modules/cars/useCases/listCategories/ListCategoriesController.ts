@@ -7,9 +7,9 @@ class ListCategoriesController {
   constructor(private listCategoriesUseCase: ListCategoriesUseCase) { }
 
   handle(request: Request, response: Response) {
-    this.listCategoriesUseCase.execute();
+    const allCategories = this.listCategoriesUseCase.execute();
 
-    return response.json();
+    return response.json(allCategories);
   }
 }
 
