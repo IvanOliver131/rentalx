@@ -12,6 +12,7 @@ class CreateSpecificationService {
   execute({ name, description }: IRequest) {
     const specificationAlreadyExists =
       this.specificationsRepository.findByName(name);
+
     if (specificationAlreadyExists) {
       throw new Error("Specification Already Exists!");
     }
