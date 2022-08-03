@@ -1,5 +1,6 @@
 import { v4 as uuidV4 } from "uuid";
 
+// Modelagem dos dados
 class Category {
   id?: string;
   name: string;
