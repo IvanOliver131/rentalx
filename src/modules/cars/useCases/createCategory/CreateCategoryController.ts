@@ -2,7 +2,7 @@
 import { Request, Response } from "express";
 
 import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
-// teste
+
 class CreateCategoryController {
   constructor(private createCategoryUseCase: CreateCategoryUseCase) { }
 
