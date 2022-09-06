@@ -8,7 +8,6 @@ class ImportCategoryUseCase {
     const parseFile = parse();
     stream.pipe(parseFile);
 
-    // passa linha por linha
     parseFile.on("data", async (line) => {
       console.log(line);
     });
