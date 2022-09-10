@@ -7,7 +7,7 @@ class ImportCategoryUseCase {
     const stream = fs.createReadStream(file.path);
     const parseFile = parse();
     stream.pipe(parseFile);
-    // commit
+
     parseFile.on("data", async (line) => {
       console.log(line);
     });
