@@ -23,7 +23,7 @@ class ImportCategoryUseCase {
 
       parseFile
         .on("data", async (line) => {
-          // Retorna ["name", "description"]
+          // Retorna ["name", "description"] ---
           const [name, description] = line;
           categories.push({
             name,
