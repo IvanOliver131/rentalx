@@ -7,7 +7,7 @@ import swaggerFile from "./swagger.json";
 
 const app = express();
 
-// Utilizamos isso para aceitar o JSON
+// utilizamos isso para aceitar o JSON
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
