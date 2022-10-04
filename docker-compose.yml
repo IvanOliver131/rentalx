@@ -1,5 +1,6 @@
 version: "3.7"
 
+# esqueleto do docker compose e criação do container
 services:
   app:
     build: .
