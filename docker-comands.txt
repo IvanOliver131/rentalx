@@ -8,3 +8,6 @@ docker-compose stop - para o container
 docker-compose down - remove tudo que criamos dentro dos serviços
 docker-compose start - starta o container
 docker exec -it nome_container|id_container /bin/bash - acessa o container
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rentx - ver IP
+docker exec rentx cat /etc/hosts - ver IP
+

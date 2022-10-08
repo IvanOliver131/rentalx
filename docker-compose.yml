@@ -2,6 +2,21 @@ version: "3.7"
 
 # esqueleto do docker compose e criação do container
 services:
+  database_ignite:
+    container_name: database_ignite
+    image: postgres:12.5
+    restart: always
+    environment:
+      POSTGRES_USER: docker
+      POSTGRES_DB: rentx
+      POSTGRES_PASSWORD: docker_password
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
   app:
     build: .
     container_name: rentx
@@ -9,3 +24,8 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
+    network_mode: host
+
+volumes:
+  pgdata:
+    driver: local

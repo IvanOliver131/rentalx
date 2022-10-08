@@ -1,0 +1,11 @@
+⚠ O TypeORM sofreu algumas alterações que ainda não estão refletidas na documentação oficial.
+
+🔹 Pra configurar o banco, agora é necessário criar um arquivo dataSource.ts como descrito aqui: https://typeorm.io/data-source
+🔹 Pra conectar ao banco, chame a função initialize() no próprio arquivo dataSource.ts:   AppDataSource.initialize()  e depois importe ele diretamente no server.js:   import "./db/dataSource"
+🔹 O script typeorm no package.json deve ser:  ts-node-dev  node_modules/typeorm/cli.js
+🔹 Pra criar uma migration:   yarn typeorm migration:create src/database/migrations/nome-da-migration
+🔹 Pra executar as migrations:   yarn typeorm -- migration:run -d src/database/dataSource.ts
+🔹 Se quiser usar variáveis de ambiente, é preciso instalar o pacote dotenv, e chamar dotenv.config() no topo do dataSource, pois esse arquivo não tem acesso às variáveis por padrão.
+
+Pode ser que essa estrutura mude, então se der problema procure nas issues do Github do TypeORM. 
+Mais detalhes sobre a alteração da CLI: https://github.com/typeorm/typeorm/issues/8810
