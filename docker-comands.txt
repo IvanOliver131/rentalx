@@ -6,3 +6,5 @@ docker stop id_container - para o container
 docker-compose up -d - sobe o container em background
 docker-compose stop - para o container 
 docker-compose down - remove tudo que criamos dentro dos serviços
+docker-compose start - starta o container
+docker exec -it nome_container|id_container /bin/bash - acessa o container
