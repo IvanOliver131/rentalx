@@ -1,0 +1,8 @@
+docker ps - lista os containers
+docker ps -a - lista os containers que estao em funcionamento
+docker rm id_cotainer - remove o container pelo id_cotainer
+docker start id_container - starta o container
+docker stop id_container - para o container
+docker-compose up -d - sobe o container em background
+docker-compose stop - para o container 
+docker-compose down - remove tudo que criamos dentro dos serviços
