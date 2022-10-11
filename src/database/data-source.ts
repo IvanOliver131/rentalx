@@ -8,7 +8,7 @@ export const AppDataSource = new DataSource({
   password: "docker_password",
   database: "rentx",
   synchronize: false,
-  // logging: true,
+  // logging: true, // log
   entities: ["src/models/*.ts"], // falta criar
   // subscribers: [],
   migrations: ["src/database/migrations/*.ts"],
