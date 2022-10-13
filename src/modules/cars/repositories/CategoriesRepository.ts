@@ -5,8 +5,6 @@ import {
 } from "../interfaces/ICategoriesRepository";
 import { Category } from "../model/Category";
 
-// singleton
-
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
