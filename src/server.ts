@@ -19,7 +19,6 @@ app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-// Importamos as rotas
 app.use(router);
 
 app.listen(3333, () => console.log("Server is running in port 3333! 🔥🚀"));
