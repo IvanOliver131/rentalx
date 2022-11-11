@@ -1,3 +1,4 @@
+---------------- COMANDOS DOCKER ----------------------------------------
 docker ps - lista os containers
 docker ps -a - lista os containers que estao em funcionamento
 docker rm id_cotainer - remove o container pelo id_cotainer
