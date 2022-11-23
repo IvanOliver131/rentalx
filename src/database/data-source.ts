@@ -9,7 +9,13 @@ export const AppDataSource = new DataSource({
   database: "rentx",
   synchronize: false,
   // logging: true, // log
-  entities: ["src/models/*.ts"], // falta criar
+  entities: ["src/modules/**/entities/*.ts"], // falta criar
   // subscribers: [],
   migrations: ["src/database/migrations/*.ts"],
 });
+
+AppDataSource.initialize()
+  .then(() => {
+    console.log("Data Source has been initialized succesfully! ✨");
+  })
+  .catch((error) => console.log(error));

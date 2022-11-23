@@ -1,16 +1,9 @@
 import express from "express";
 import swaggerUi from "swagger-ui-express";
 
-import { AppDataSource } from "./database/data-source";
-import { router } from "./routes";
 // colocar resolveJsonModule como true no tsconfig
+import { router } from "./routes";
 import swaggerFile from "./swagger.json";
-
-AppDataSource.initialize()
-  .then(() => {
-    console.log("Data Source has been initialized succesfully! ✨");
-  })
-  .catch((error) => console.log(error));
 
 const app = express();
 
