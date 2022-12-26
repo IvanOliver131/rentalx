@@ -1,5 +1,9 @@
+import "reflect-metadata";
+
 import express from "express";
 import swaggerUi from "swagger-ui-express";
+
+import "./shared/container";
 
 // colocar resolveJsonModule como true no tsconfig
 import { router } from "./routes";

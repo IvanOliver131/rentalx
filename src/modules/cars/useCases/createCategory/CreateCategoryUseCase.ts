@@ -1,4 +1,5 @@
-/* eslint-disable prettier/prettier */
+import { inject, injectable } from "tsyringe";
+
 import { ICategoriesRepository } from "../../interfaces/ICategoriesRepository";
 
 interface IRequest {
@@ -6,15 +7,13 @@ interface IRequest {
   description: string;
 }
 
-/**
- * [x] - Definir o tipo de retorno
- * [x] - Alterar o retorno de erro
- * [x] - Acessar o repositório
- * [x] - Retornar algo
- */
+@injectable()
 class CreateCategoryUseCase {
   // Devemos criar o private para termos acesso dentro do execute
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    @inject("CategoriesRepository")
+    private categoriesRepository: ICategoriesRepository
+  ) {}
 
   async execute({ name, description }: IRequest): Promise<void> {
     const categoryAlreadyExists = await this.categoriesRepository.findByName(
