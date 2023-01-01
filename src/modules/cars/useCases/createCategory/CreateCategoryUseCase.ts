@@ -9,7 +9,7 @@ interface IRequest {
 
 @injectable()
 class CreateCategoryUseCase {
-  // Devemos criar o private para termos acesso dentro do execute
+  // Devemos criar o private para que se possa obeter o acesso dentro do execute
   constructor(
     @inject("CategoriesRepository")
     private categoriesRepository: ICategoriesRepository
