@@ -15,6 +15,7 @@ class CreateCategoryUseCase {
     private categoriesRepository: ICategoriesRepository
   ) {}
 
+  // realiza somente uma função
   async execute({ name, description }: IRequest): Promise<void> {
     const categoryAlreadyExists = await this.categoriesRepository.findByName(
       name
