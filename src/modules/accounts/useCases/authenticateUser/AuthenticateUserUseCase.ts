@@ -1,11 +1,12 @@
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import { inject } from "tsyringe";
+import { inject, injectable } from "tsyringe";
 
 import { IRequestDTO } from "../../dtos/IRequestDTO";
 import { IResponseDTO } from "../../dtos/IResponseDTO";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
 
+@injectable()
 class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
@@ -13,14 +14,12 @@ class AuthenticateUserUseCase {
   ) {}
 
   async execute({ email, password }: IRequestDTO): Promise<IResponseDTO> {
-    // Usuário existe
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
       throw new Error("Email or password incorrect!");
     }
 
-    // Senha está correta
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
@@ -33,7 +32,15 @@ class AuthenticateUserUseCase {
       expiresIn: "1d",
     });
 
-    return { user, token };
+    const tokenReturn: IResponseDTO = {
+      token,
+      user: {
+        name: user.name,
+        email: user.email,
+      },
+    };
+
+    return tokenReturn;
   }
 }
 export { AuthenticateUserUseCase };
