@@ -2,6 +2,7 @@ import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
 import { inject, injectable } from "tsyringe";
 
+import { AppError } from "../../../../errors/AppError";
 import { IRequestDTO } from "../../dtos/IRequestDTO";
 import { IResponseDTO } from "../../dtos/IResponseDTO";
 import { IUsersRepository } from "../../interfaces/IUsersRepository";
@@ -17,13 +18,13 @@ class AuthenticateUserUseCase {
     const user = await this.usersRepository.findByEmail(email);
 
     if (!user) {
-      throw new Error("Email or password incorrect!");
+      throw new AppError("Email or password incorrect!", 401);
     }
 
     const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      throw new Error("Email or password incorrect!");
+      throw new AppError("Email or password incorrect!", 401);
     }
 
     // Gerar JWT - é bom deixar essa chave nas variáveis de ambiente/env
