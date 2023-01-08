@@ -17,7 +17,7 @@ class UpdateUserAvatarUseCase {
   async execute({ userId, avatarFile }: IRequest): Promise<void> {
     const user = await this.usersRepository.findById(userId);
 
-    // verificamos se existe um user avatar
+    // verificamos se existe um user avatar antes de deletar
     if (user.avatar) {
       await deleteFile(`./tmp/avatar/${user.avatar}`);
     }
