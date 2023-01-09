@@ -1,10 +1,10 @@
 /* eslint-disable no-use-before-define */
 import { Repository } from "typeorm";
 
-import { AppDataSource } from "../../../database/data-source";
-import { ICreateCategoryDTO } from "../dtos/ICreateCategoryDTO";
-import { Category } from "../entities/Category";
-import { ICategoriesRepository } from "../interfaces/ICategoriesRepository";
+import { AppDataSource } from "../../../../database/data-source";
+import { ICreateCategoryDTO } from "../../dtos/ICreateCategoryDTO";
+import { Category } from "../../entities/Category";
+import { ICategoriesRepository } from "../../interfaces/ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;

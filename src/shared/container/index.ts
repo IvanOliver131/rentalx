@@ -4,8 +4,8 @@ import { IUsersRepository } from "../../modules/accounts/interfaces/IUsersReposi
 import { UsersRepository } from "../../modules/accounts/repositories/UsersRepository";
 import { ICategoriesRepository } from "../../modules/cars/interfaces/ICategoriesRepository";
 import { ISpecificationsRepository } from "../../modules/cars/interfaces/ISpecificationsRepository";
-import { CategoriesRepository } from "../../modules/cars/repositories/CategoriesRepository";
-import { SpecificationsRepository } from "../../modules/cars/repositories/SpecificationsRepository";
+import { CategoriesRepository } from "../../modules/cars/repositories/implementations/CategoriesRepository";
+import { SpecificationsRepository } from "../../modules/cars/repositories/implementations/SpecificationsRepository";
 
 // ICategoriesRepository
 container.registerSingleton<ICategoriesRepository>(
