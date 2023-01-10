@@ -8,7 +8,9 @@ import swaggerUi from "swagger-ui-express";
 import "./shared/container";
 
 // colocar resolveJsonModule como true no tsconfig
-import { AppError } from "./errors/AppError";
+
+import { AppError } from "@errors/AppError";
+
 import { router } from "./routes";
 import swaggerFile from "./swagger.json";
 

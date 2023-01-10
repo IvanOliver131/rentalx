@@ -56,7 +56,8 @@
         "newlinesBetween": "always",
         "groups": [
           "module",
-          "/^@shared/",
+          // "/^@shared/" sem o @,
+          "/^@/",
           [
             "parent",
             "sibling",
