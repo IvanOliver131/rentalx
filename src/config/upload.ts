@@ -2,6 +2,7 @@ import crypto from "crypto";
 import multer from "multer";
 import { resolve } from "path";
 
+// Deixamos o upload de forma mais dinamica
 export default {
   upload(folder: string) {
     return {
