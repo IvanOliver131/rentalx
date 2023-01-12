@@ -1,5 +1,5 @@
 /* eslint-disable no-use-before-define */
-import { AppDataSource } from "database/data-source";
+import { AppDataSource } from "@shared/infra/typeorm/data-source";
 import { Repository } from "typeorm";
 
 import { ICreateCategoryDTO } from "@modules/cars/dtos/ICreateCategoryDTO";
