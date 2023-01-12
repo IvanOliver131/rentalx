@@ -5,14 +5,14 @@ import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 import swaggerUi from "swagger-ui-express";
 
-import "./shared/container";
+import "../../container";
 
 // colocar resolveJsonModule como true no tsconfig
 
-import { AppError } from "@errors/AppError";
+import { AppError } from "@shared/errors/AppError";
 
+import swaggerFile from "../../../swagger.json";
 import { router } from "./routes";
-import swaggerFile from "./swagger.json";
 
 const app = express();
 
