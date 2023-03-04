@@ -4,6 +4,8 @@
 
 **RN** => Regra de negócio
 
+<!--  -->
+
 **RF**
 
 **RNF**
